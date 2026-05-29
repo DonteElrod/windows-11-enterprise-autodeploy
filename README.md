@@ -21,3 +21,9 @@ This repository contains a highly optimized `autounattend.xml` answer file desig
 * XML Configuration & Automation
 * PowerShell Scripting
 * Windows Security & Administration
+
+## Test Environment
+This deployment script has been thoroughly tested in the following environments:
+* **Hypervisor:** Microsoft Hyper-V / VMware Workstation (Generation 2 VMs)
+* **Security:** UEFI Secure Boot & TPM 2.0 Enabled
+* **Network:** Both connected and isolated (air-gapped) networks
