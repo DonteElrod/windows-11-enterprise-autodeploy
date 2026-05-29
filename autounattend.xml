@@ -7,7 +7,7 @@
 			<RunSynchronous>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>1</Order>
-					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:@echo off&amp;echo:call :print ^"Setting keyboard layout for PE session^"&amp;echo:wpeutil.exe SetKeyboardLayout 0422:00000422&amp;echo:for ^%^%d in (C D E F G H I J K L M N O P Q T U V X Y Z^) do ()</Path>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:@echo off&amp;echo:call :print ^"Setting keyboard layout for PE session^"&amp;echo:wpeutil.exe SetKeyboardLayout 0409:00000409&amp;echo:for ^%^%d in (C D E F G H I J K L M N O P Q T U V X Y Z^) do ()</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>2</Order>
@@ -39,19 +39,19 @@
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>9</Order>
-					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:On Error Resume Next&amp;echo:echo:Set wmi = GetObject(^^^"winmgmts:\\.\root\cimv2^^^"^^^)&amp;echo:echo:Set drive = wmi.Get(^^^"Win32_DiskDrive.DeviceID='\\.\PHYSICALDRIVE0'^^^"^^^)&amp;echo:echo:If Err.Number ^^^&lt;^^^&gt; 0 Then)</Path>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:On Error Resume Next&amp;echo:echo:Set wmi = GetObject(^^^"winmgmts:\\.\root\cimv2^^^"^^^)&amp;echo:echo:Set drive = wmi.Get(^^^"Win32_DiskDrive.DeviceID='\\.\PHYSICALDRIVE0'^^^"^^^)&amp;echo:echo:If Err.Number ^^^<^^^&gt; 0 Then)</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>10</Order>
-					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:Fail ^^^"Could not locate disk 0 (^^^" ^^^&amp; Err.Description ^^^&amp; ^^^"^^^).^^^"&amp;echo:echo:End If&amp;echo:echo:actual = drive.InterfaceType&amp;echo:echo:If actual ^^^&lt;^^^&gt; ^^^"IDE^^^" And actual ^^^&lt;^^^&gt; ^^^"SCSI^^^" Then)</Path>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:Fail ^^^"Could not locate disk 0 (^^^" ^^^&amp; Err.Description ^^^&amp; ^^^"^^^).^^^"&amp;echo:echo:End If&amp;echo:echo:actual = drive.InterfaceType&amp;echo:echo:If actual ^^^<^^^&gt; ^^^"IDE^^^" And actual ^^^<^^^&gt; ^^^"SCSI^^^" Then)</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>11</Order>
-					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:Fail ^^^"InterfaceType '^^^" ^^^&amp; actual ^^^&amp; ^^^"' of disk 0 is unexpected.^^^"&amp;echo:echo:End If&amp;echo:echo:actual = drive.MediaType&amp;echo:echo:If actual ^^^&lt;^^^&gt; ^^^"Fixed hard disk media^^^" Then)</Path>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:Fail ^^^"InterfaceType '^^^" ^^^&amp; actual ^^^&amp; ^^^"' of disk 0 is unexpected.^^^"&amp;echo:echo:End If&amp;echo:echo:actual = drive.MediaType&amp;echo:echo:If actual ^^^<^^^&gt; ^^^"Fixed hard disk media^^^" Then)</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>12</Order>
-					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:Fail ^^^"MediaType '^^^" ^^^&amp; actual ^^^&amp; ^^^"' of disk 0 is unexpected.^^^"&amp;echo:echo:End If&amp;echo:echo:actual = CInt( drive.Size / 1024 / 1024 / 1024 ^^^)&amp;echo:echo:expected = 100&amp;echo:echo:If actual ^^^&lt; expected Then)</Path>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:echo:Fail ^^^"MediaType '^^^" ^^^&amp; actual ^^^&amp; ^^^"' of disk 0 is unexpected.^^^"&amp;echo:echo:End If&amp;echo:echo:actual = CInt( drive.Size / 1024 / 1024 / 1024 ^^^)&amp;echo:echo:expected = 100&amp;echo:echo:If actual ^^^< expected Then)</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>13</Order>
@@ -107,11 +107,11 @@
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>26</Order>
-					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:call :print ^"Setting device setup region to Ukraine (GeoID 241^)^"&amp;echo:reg.exe LOAD HKLM\mount W:\Windows\System32\config\SOFTWARE)</Path>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:call :print ^"Setting device setup region to United States (GeoID 244^)^"&amp;echo:reg.exe LOAD HKLM\mount W:\Windows\System32\config\SOFTWARE)</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>27</Order>
-					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:reg.exe ADD ^"HKLM\mount\Microsoft\Windows\CurrentVersion\Control Panel\DeviceRegion^" /v DeviceRegion /t REG_DWORD /d 241 /f&amp;echo:reg.exe UNLOAD HKLM\mount&amp;echo:call :print ^"Computer will now reboot^")</Path>
+					<Path>cmd.exe /c &gt;&gt;X:\pe.cmd (echo:reg.exe ADD ^"HKLM\mount\Microsoft\Windows\CurrentVersion\Control Panel\DeviceRegion^" /v DeviceRegion /t REG_DWORD /d 244 /f&amp;echo:reg.exe UNLOAD HKLM\mount&amp;echo:call :print ^"Computer will now reboot^")</Path>
 				</RunSynchronousCommand>
 				<RunSynchronousCommand wcm:action="add">
 					<Order>28</Order>
@@ -160,10 +160,10 @@
 	
 	<settings pass="oobeSystem">
 		<component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
-			<InputLocale>0422:00000422;0409:00000409</InputLocale>
-			<SystemLocale>uk-UA</SystemLocale>
-			<UILanguage>uk-UA</UILanguage>
-			<UserLocale>uk-UA</UserLocale>
+			<InputLocale>0409:00000409</InputLocale>
+			<SystemLocale>en-US</SystemLocale>
+			<UILanguage>en-US</UILanguage>
+			<UserLocale>en-US</UserLocale>
 		</component>
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
 			<OOBE>
